@@ -1,0 +1,20 @@
+# Time: 150224 18:31:56
+# User@Host: app_main[app_main] @ localhost [127.0.0.1]
+# Query_time: 1.671918  Lock_time: 0.000000 Rows_sent: 164  Rows_examined: 164
+SET timestamp=1424802716;
+SHOW TABLES FROM `app`;
+# Time: 150224 19:00:09
+# User@Host: app_main[app_main] @ localhost [127.0.0.1]
+# Query_time: 3.546966  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 4
+SET timestamp=1424804409;
+SELECT `User`.`id`, `User`.`windows_username`, `User`.`password`, `User`.`email`, `User`.`first_name`, `User`.`last_name` GROUP BY `User`.`id`;
+# Time: 150224 19:00:16
+# User@Host: mysqlbackup[mysqlbackup] @ localhost [127.0.0.1]
+# Query_time: 1.375035  Lock_time: 0.000000 Rows_sent: 28914  Rows_examined: 28914
+SET timestamp=1424804416;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `archived_projects`;
+# Time: 150224 19:00:19
+# User@Host: mysqlbackup[mysqlbackup] @ localhost [127.0.0.1]
+# Query_time: 2.265683  Lock_time: 0.000000 Rows_sent: 5713  Rows_examined: 5713
+SET timestamp=1424804419;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `audits`;

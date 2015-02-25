@@ -1,0 +1,51 @@
+$darkgrey: #272822;
+$yellow: #E6DB74;
+$pink: #F92672;
+$green: #A6E22A;
+$blue: #89BDFF;
+
+$maxWidth: 800px;
+
+body {
+  font-family: monospace;
+  background-color: $darkgrey;
+}
+
+#container {
+  color: #fff;
+}
+
+table, th, td {
+  border-collapse: collapse;
+  border: 1px solid white;
+}
+
+th {
+  color: $blue;
+  padding: 5px 5px;
+  a {
+    color: $blue;
+    text-decoration: dashed;
+  }
+}
+
+td {
+  padding: 0px 5px;
+  color: $yellow;
+  &.text {
+    text-align: center;
+  }
+  &.numbers {
+    text-align: right;
+  }
+  &.restrict-width {
+    width: $maxWidth;
+  }
+}
+
+
+tr.odd {
+  td {
+    color: $green;
+  }
+}

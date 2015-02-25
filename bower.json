@@ -1,0 +1,21 @@
+{
+  "name": "mysql-slow-query-viewer",
+  "version": "0.0.0",
+  "authors": [
+    "Gareth Ellis <garethellis@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "alertifyjs": "~0.3.16",
+    "handlebars": "~3.0.0"
+  }
+}

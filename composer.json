@@ -1,0 +1,18 @@
+{
+    "name": "garethellis/mysql-slow-query-viewer",
+    "require": {
+        "silex/silex": "^1.2",
+        "gumbercules/mysqlslow": "dev-master",
+        "twig/twig": "~1.18"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gareth Ellis",
+            "email": "garethellis@gmail.com"
+        }
+    ]
+}

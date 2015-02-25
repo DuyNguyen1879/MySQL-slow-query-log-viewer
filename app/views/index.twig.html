@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>MySQL slow query log viewer</title>
+    <link href="/css/app.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <div id="container">
+        <div id="form-container">
+            <form action="/parse" method="POST">
+                <label for="fileInput">
+                    Upload log file (.log format):
+                </label>
+                <input id="fileInput" type="file" name="file">
+                <button type="submit">Parse</button>
+            </form>
+        </div>
+
+        <div id="results-container">
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/js/app.min.js"></script>
+     <script id="results-template" type="text/x-handlebars-template">​
+        {% raw %}
+            <table>
+                <thead>
+                    <tr>
+                        <th><a href="#" class="sort" data-property="query">Query</a></th>
+                        <th><a href="#" class="sort" data-property="queryTime">Time taken</a></th>
+                        <th><a href="#" class="sort" data-property="datetime">Date & time</a></th>
+                        <th><a href="#" class="sort" data-property="user">User</a></th>
+                        <th><a href="#" class="sort" data-property="host">Host</a></th>
+                        <th><a href="#" class="sort" data-property="rowsExamined">Rows examined</a></th>
+                        <th><a href="#" class="sort" data-property="rowsSent">Rows sent</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each this}}
+                        {{#everyOther @index 2 }}
+                            <tr class="odd">
+                        {{else}}
+                            <tr>
+                        {{/everyOther}}
+                                <td class="text restrict-width">{{query}}</td>
+                                <td class="numbers">{{queryTime}}</td>
+                                <td class="text">{{datetime}}</td>
+                                <td class="text">{{user}}</td>
+                                <td class="text">{{host}}</td>
+                                <td class="numbers">{{rowsExamined}}</td>
+                                <td class="numbers">{{rowsSent}}</td>
+                            </tr>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        {% endraw %}
+    ​</script>
+</body>
+</html>
