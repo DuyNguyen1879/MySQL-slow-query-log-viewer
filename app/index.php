@@ -59,12 +59,19 @@ $app->post("/parse", function (Request $request) use ($app) {
             ];
         }
 
+        deleteUploadedFile($dir . $filename);
         return $app->json($logEntries);
     } catch (Exception $e) {
+        deleteUploadedFile($dir . $filename);
         $error["message"] = $e->getMessage();
         return $app->json($error, 400);
     }
 
 });
+
+//clean up uploaded file
+function deleteUploadedFile($file) {
+    if (file_exists($file)) @unlink($file);
+}
 
 $app->run();
