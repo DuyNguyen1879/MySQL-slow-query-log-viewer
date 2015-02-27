@@ -51,6 +51,49 @@ function dynamicSort(property) {
     };
 }
 
+/*
+ * filter form data
+ * @param array data - array of objects from ajax/sorted/filtered
+ * @param string input - input entered by user. expected format is property:search_string;another_property:search_string;
+ */
+function filterData(data, input) {
+
+    if (data.length === 0) return;
+
+    if (input === "") {
+        resetFilters();
+    }
+
+    var searchFilters = input.split(":", 2);
+
+    if (searchFilters.length === 0) {
+        return alertify.error("Invalid filter string. Example valid string: 'query:SELECT'");
+    }
+
+    var property = searchFilters[0];
+    var val = searchFilters[1];
+
+    if (!sortOrders[property]) {
+        return alertify.error("Invalid property name");
+    }
+
+    filteredData = [];
+    for (var i in data) {
+        if (data[i][property].indexOf(val) > -1) filteredData.push(data[i]);
+    }
+
+    populateResults(filteredData);
+
+    return filteredData;
+
+}
+ 
+function resetFilters()
+{
+    populateResults(originalData);
+}
+
+
 
 /*
  * jQuery event handlers
@@ -100,6 +143,24 @@ $(document).ready(function() {
         alertify.log("Attempting to parse...");
 
     });
+
+    /*
+     *  Handle filtering
+     */
+
+    $(document).on("submit", "#filterForm", function(e) {
+        e.preventDefault();
+        var filterInput = $("#filterField").val();
+        data = filterData(data, filterInput);
+        $("filterField").val(filterInput);
+    });
+
+    $(document).on("reset", "#filterForm", function(e) {
+        e.preventDefault();
+        var filterInput = $("#filterField").val("");
+        populateResults(originalData);
+        data = originalData;
+    });    
 
 
     /*
