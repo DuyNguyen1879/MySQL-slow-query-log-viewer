@@ -54,6 +54,7 @@ $app->post("/parse", function (Request $request) use ($app) {
                 "host" => $entry->getHost(),
                 "user" => $entry->getUser(),
                 "datetime" => $entry->getDatetime()->format("Y-m-d H:i:s"),
+                "nicedatetime" => strtoupper($entry->getDatetime()->format("H:i dMy")),
                 "queryTime" => (float)$entry->getQueryTime(),
                 "lockTime" => (float)$entry->getLockTime(),
                 "rowsSent" => (int)$entry->getRowsSent(),
