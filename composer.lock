@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8d2b003fc56f261c267ef98d90939f3a",
+    "hash": "fe80d1e045a04d0787f315f8c56c23f1",
     "packages": [
         {
             "name": "gumbercules/mysqlslow",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/garethellis36/mysql-slow-query-log-parser.git",
-                "reference": "c855c2c7c0c575168e39410ec8148a38ae2347e3"
+                "reference": "bbb4074b5063e33891530ae0d18e8734be4cee28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/garethellis36/mysql-slow-query-log-parser/zipball/c855c2c7c0c575168e39410ec8148a38ae2347e3",
-                "reference": "c855c2c7c0c575168e39410ec8148a38ae2347e3",
+                "url": "https://api.github.com/repos/garethellis36/mysql-slow-query-log-parser/zipball/bbb4074b5063e33891530ae0d18e8734be4cee28",
+                "reference": "bbb4074b5063e33891530ae0d18e8734be4cee28",
                 "shasum": ""
             },
             "require-dev": {
@@ -40,7 +40,7 @@
                 }
             ],
             "description": "Parser class for MySQL slow query log",
-            "time": "2015-02-27 10:15:06"
+            "time": "2015-02-27 13:08:52"
         },
         {
             "name": "pimple/pimple",
