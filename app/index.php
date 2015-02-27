@@ -54,10 +54,10 @@ $app->post("/parse", function (Request $request) use ($app) {
                 "host" => $entry->getHost(),
                 "user" => $entry->getUser(),
                 "datetime" => $entry->getDatetime()->format("Y-m-d H:i:s"),
-                "queryTime" => $entry->getQueryTime(),
-                "lockTime" => $entry->getLockTime(),
-                "rowsSent" => $entry->getRowsSent(),
-                "rowsExamined" => $entry->getRowsExamined(),
+                "queryTime" => (float)$entry->getQueryTime(),
+                "lockTime" => (float)$entry->getLockTime(),
+                "rowsSent" => (int)$entry->getRowsSent(),
+                "rowsExamined" => (int)$entry->getRowsExamined(),
                 "query" => $entry->getQuery()
             ];
         }
