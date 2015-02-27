@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fe80d1e045a04d0787f315f8c56c23f1",
+    "hash": "8d2b003fc56f261c267ef98d90939f3a",
     "packages": [
         {
             "name": "gumbercules/mysqlslow",
