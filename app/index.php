@@ -2,9 +2,13 @@
 require_once __DIR__.'/../vendor/autoload.php';
 
 use Silex\Provider\TwigServiceProvider;
-
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Debug\ErrorHandler;
+use Symfony\Component\Debug\ExceptionHandler;
 use Gumbercules\MysqlSlow\LogFileReader;
+
+ErrorHandler::register();
+ExceptionHandler::register(false);
 
 date_default_timezone_set("Europe/London");
 

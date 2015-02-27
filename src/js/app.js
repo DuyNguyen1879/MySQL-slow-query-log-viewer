@@ -79,6 +79,10 @@ $(document).ready(function() {
             processData: false,
             success: function ajaxSuccess(response)
             {
+                //handle 400 error
+                if (response.message) {
+                    return alertify.error(response.message);
+                }
                 alertify.success("Success!");
 
                 //make two copies of data
