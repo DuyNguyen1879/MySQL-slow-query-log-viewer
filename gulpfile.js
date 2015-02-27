@@ -8,6 +8,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var minify = require("gulp-minify");
+var gutil = require('gulp-util');
 
 // Lint Task
 gulp.task('lint', function() {
@@ -36,13 +37,13 @@ gulp.task('scripts', function() {
             'src/js/**/*.js'
         ])
         .pipe(concat('app.min.js'))
-        .pipe(uglify())
+        .pipe(uglify().on('error', gutil.log))
         .pipe(gulp.dest('app/js'));
 });
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch('src/js/*.js', ['lint', 'scripts']);
+    gulp.watch('src/js/**/*.js', ['lint', 'scripts']);
     gulp.watch('src/scss/*.scss', ['sass']);
 });
 
