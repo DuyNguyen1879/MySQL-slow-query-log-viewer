@@ -9,7 +9,6 @@ use Gumbercules\MysqlSlow\LogFileReader;
 date_default_timezone_set("Europe/London");
 
 $app = new Silex\Application();
-$app['debug'] = true;
 
 $app->register(new TwigServiceProvider(), array(
     'twig.path' => array(__DIR__.'/views')
