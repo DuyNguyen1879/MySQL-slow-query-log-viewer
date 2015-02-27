@@ -9,7 +9,7 @@
 
     <div id="container">
         <div id="form-container">
-            <form action="/parse" method="POST" enctype="multipart/form-data">
+            <form id="uploadForm" action="/parse" method="POST" enctype="multipart/form-data">
                 <label for="fileInput">
                     Upload log file (.log format):
                 </label>
@@ -24,8 +24,14 @@
     </div>
 
     <script type="text/javascript" src="/js/app.min.js"></script>
-     <script id="results-template" type="text/x-handlebars-template">​
+    <script id="results-template" type="text/x-handlebars-template">​
         {% raw %}
+            <div id="filter">
+                <form id="filterForm">
+                    <input type="text" name="filter" placeholder='Filter: e.g. "user:root;query:SELECT"'>
+                    <button type="submit">Filter</button>
+                </form>
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -45,7 +51,7 @@
                         {{else}}
                             <tr>
                         {{/everyOther}}
-                                <td class="text restrict-width">{{query}}</td>
+                                <td class="query">{{query}}</td>
                                 <td class="numbers">{{queryTime}}</td>
                                 <td class="text">{{datetime}}</td>
                                 <td class="text">{{user}}</td>

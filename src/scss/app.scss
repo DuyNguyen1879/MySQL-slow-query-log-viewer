@@ -30,16 +30,18 @@ th {
 }
 
 td {
-  padding: 0px 5px;
+  padding: 2px 5px;
   color: $yellow;
+  vertical-align: top;
+  &.query {
+    width: $maxWidth;
+    text-align: left;
+  }
   &.text {
     text-align: center;
   }
   &.numbers {
     text-align: right;
-  }
-  &.restrict-width {
-    width: $maxWidth;
   }
 }
 

@@ -60,7 +60,7 @@ $(document).ready(function() {
     /*
      * AJAX post the form to SILEX
      */
-    $("form").submit(function submitForm(e) {
+    $("#uploadForm").submit(function submitForm(e) {
 
         e.preventDefault();
 

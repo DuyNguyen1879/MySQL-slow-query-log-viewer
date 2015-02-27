@@ -17,14 +17,16 @@ th {
     text-decoration: dashed; }
 
 td {
-  padding: 0px 5px;
-  color: #E6DB74; }
+  padding: 2px 5px;
+  color: #E6DB74;
+  vertical-align: top; }
+  td.query {
+    width: 800px;
+    text-align: left; }
   td.text {
     text-align: center; }
   td.numbers {
     text-align: right; }
-  td.restrict-width {
-    width: 800px; }
 
 tr.odd td {
   color: #A6E22A; }
